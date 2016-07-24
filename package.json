@@ -1,0 +1,25 @@
+{
+  "name": "learn-a11y",
+  "version": "0.0.1",
+  "description": "A web app for learning web accessibility",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jkup/learn-a11y.git"
+  },
+  "keywords": [
+    "a11y",
+    "accessibility",
+    "learning",
+    "teaching"
+  ],
+  "author": "Jon Kuperman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jkup/learn-a11y/issues"
+  },
+  "homepage": "https://github.com/jkup/learn-a11y#readme"
+}
