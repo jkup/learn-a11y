@@ -22,5 +22,11 @@
     "url": "https://github.com/jkup/learn-a11y/issues"
   },
   "homepage": "https://github.com/jkup/learn-a11y#readme",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "jasmine-core": "^2.4.1",
+    "karma": "^1.1.1",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-jasmine": "^1.0.2"
+  }
 }
