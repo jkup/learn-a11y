@@ -22,7 +22,5 @@
     "url": "https://github.com/jkup/learn-a11y/issues"
   },
   "homepage": "https://github.com/jkup/learn-a11y#readme",
-  "dependencies": {
-    "express": "^4.14.0"
-  }
+  "dependencies": {}
 }
