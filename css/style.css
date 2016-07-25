@@ -1,4 +1,10 @@
 body,
 main {
   padding-top: 70px;
+  font-size: 16px;
+}
+
+main {
+  height: 1000px;
+  margin: 25px 0;
 }
