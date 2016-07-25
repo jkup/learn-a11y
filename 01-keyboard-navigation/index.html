@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Learn a11y</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="/css/style.css" media="screen" charset="utf-8">
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="/"><span class="glyphicon glyphicon-arrow-left"></span> Back</a></li>
+            <li><a href="#keyboard-navigation">Keyboard Navigation</a></li>
+            <li><a href="#proper-html">Proper HTML</a></li>
+            <li><a href="#aria">ARIA</a></li>
+            <li><a href="#form">Forms</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+
+        <main id="welcome">
+          <h1>Welcome to learn a11y</h1>
+
+          <p>A full day workshop covering web accessibility.</p>
+
+          <h3>Today we'll learn about:</h3>
+          <ol>
+            <li><a href="#keyboard-navigation">Keyboard Navigation</a></li>
+            <li><a href="#proper-html">Proper HTML</a></li>
+            <li><a href="#aria">ARIA</a></li>
+            <li><a href="#form">Forms</a></li>
+          </ol>
+        </main>
+
+        <main id="keyboard-navigation">
+          <h2>Keyboard Navigation</h2>
+
+          <p>Remember tabindex:</p>
+
+          <ul>
+            <li><b>-1</b> not in tab order, but it can be focused with JS</li>
+            <li><b>0</b> in the natural tab order, and it can be focused</li>
+            <li><b>1+</b> anti-pattern but can be used to jump to the fron tof the tab order, higher number, higher position</li>
+          </ul>
+
+        </main>
+
+        <main id="proper-html">
+          <h2>Proper HTML</h2>
+        </main>
+
+        <main id="aria">
+          <h2>ARIA</h2>
+          <h3>Accessible Rich Internet Applications</h3>
+
+          <p>The official site: <a href="https://www.w3.org/WAI/intro/aria">w3.org/WAI/intro/aria</a>
+        </main>
+
+        <main id="form">
+          <form class="form-horizontal">
+            <fieldset>
+              <legend>Sign Up</legend>
+
+              <input type="text" class="form-control" id="first-name" placeholder="First Name">
+              <input type="text" class="form-control" id="last-name" placeholder="Last Name">
+              <input type="email" class="form-control" id="email" placeholder="Email">
+              <input type="password" class="form-control" id="password" placeholder="Password">
+              <span>Favorite Color</span>
+              <select class="form-control">
+                <option>Red</option>
+                <option>Blue</option>
+                <option>Green</option>
+                <option>Purple</option>
+                <option>Black</option>
+              </select>
+              <input type="checkbox"> Remember me
+              <div class="btn btn-default">Cancel</div>
+              <div class="btn btn-primary">Submit</div>
+            </fieldset>
+          </form>
+        </main>
+      </div>
+    </div>
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
