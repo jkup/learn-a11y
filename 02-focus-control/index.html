@@ -2,10 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Learn a11y</title>
+    <title>Focus Control</title>
 
     <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="/css/style.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="/css/modal.css" media="screen" charset="utf-8">
   </head>
   <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -29,12 +30,30 @@
       </div><!-- /.container-fluid -->
     </nav>
 
-    <div class="row">
-      <div class="col-md-10 col-md-offset-1">
-        <h1>Focus Control</h1>
-      </div>
+    <h1>Focus Control</h1>
+
+    <!-- A button to toggle the modal -->
+    <button class="modal-button">Click Me</button>
+
+    <!-- The actual modal -->
+    <div class="modal">
+      <h1>Sign up for free!</h1>
+
+      <p>Sign up today!</p>
+
+      <form>
+        <input type="text" placeholder="Email" />
+        <input type="password" placeholder="Password" />
+        <button class="modal-cancel">Cancel</button>
+        <input type="submit" value="Submit" />
+      </form>
+
     </div>
+
+    <!-- A grey overlay for the background -->
+    <div class="modal-overlay"></div>
     <script type="text/javascript" src="/js/jquery.min.js"></script>
     <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/modal.js"></script>
   </body>
 </html>
