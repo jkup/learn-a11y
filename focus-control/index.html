@@ -2,10 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Learn a11y</title>
+    <title>Focus Control</title>
 
     <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="/css/style.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="/css/modal.css" media="screen" charset="utf-8">
   </head>
   <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -18,15 +19,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#welcome">Learn a11y</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="/keyboard-navigation/">Keyboard Navigation</a></li>
-            <li><a href="/focus-control/">Focus Control</a></li>
-            <li><a href="/resources/">Resources</a></li>
+            <li><a href="/"><span class="glyphicon glyphicon-arrow-left"></span> Back</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -34,11 +32,42 @@
 
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
-        <h1>Learn Accessibility</h1>
 
+        <h1>Focus Control</h1>
+
+        <!-- A button to toggle the modal -->
+        <button class="modal-button btn btn-primary">Click Me</button>
+
+        <!-- The actual modal -->
+        <div class="modal">
+          <h1>Sign up for free!</h1>
+
+          <p>Sign up today!</p>
+
+          <form>
+            <input type="text" placeholder="Email" />
+            <input type="password" placeholder="Password" />
+            <button class="modal-cancel">Cancel</button>
+            <input type="submit" value="Submit" />
+          </form>
+
+        </div>
+
+        <!-- A grey overlay for the background -->
+        <div class="modal-overlay"></div>
+
+
+        <h2>This Modal Needs To:</h2>
+
+        <ul>
+          <li>Focus inside the modal on load</li>
+          <li>Close the modal when escape key is pressed</li>
+          <li>Not allow tab to focus anything outside of the modal</li>
+        </ul>
       </div>
     </div>
     <script type="text/javascript" src="/js/jquery.min.js"></script>
     <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/modal.js"></script>
   </body>
 </html>
