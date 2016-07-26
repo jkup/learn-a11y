@@ -2,6 +2,8 @@
 
 A web app for learning web accessibility.
 
+[![NPM](https://nodei.co/npm/learn-a11y.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/learn-a11y/)
+
 This is meant to accompany my Introduction to Accessibility workshop but my hope is that it will stand fine on its own.
 
 > Requires some type of http server. I recommend node's http-server package.
