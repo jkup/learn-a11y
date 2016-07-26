@@ -1,7 +1,7 @@
-var modal        = document.querySelector('.modal');
-var modalButton  = document.querySelector('.modal-button');
-var modalOverlay = document.querySelector('.modal-overlay');
-var cancelButton = document.querySelector('.modal-cancel');
+var modal        = document.querySelector('.focus-modal');
+var modalButton  = document.querySelector('.focus-modal-button');
+var modalOverlay = document.querySelector('.focus-modal-overlay');
+var cancelButton = document.querySelector('.focus-modal-cancel');
 
 modalButton.addEventListener('click', open);
 cancelButton.addEventListener('click', close);
