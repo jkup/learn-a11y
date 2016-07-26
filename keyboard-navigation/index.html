@@ -24,9 +24,10 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li><a href="/"><span class="glyphicon glyphicon-arrow-left"></span> Back</a></li>
-            <li><a href="#keyboard-navigation">Keyboard Navigation</a></li>
-            <li><a href="#proper-html">Proper HTML</a></li>
-            <li><a href="#aria">ARIA</a></li>
+            <li><a href="#main">Assignment</a></li>
+            <li><a href="#active-element">activeElement</a></li>
+            <li><a href="#tabindex">Tabindex</a></li>
+            <li><a href="#tabbable-items">Tabbable Items</a></li>
             <li><a href="#form">Forms</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
@@ -36,22 +37,25 @@
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
 
-        <main id="welcome">
-          <h1>Welcome to learn a11y</h1>
+        <main id="main">
+          <h1>Welcome to our first exercise</h1>
 
-          <p>A full day workshop covering web accessibility.</p>
-
-          <h3>Today we'll learn about:</h3>
+          <h2>Fix these bugs:</h2>
           <ol>
-            <li><a href="#keyboard-navigation">Keyboard Navigation</a></li>
-            <li><a href="#proper-html">Proper HTML</a></li>
-            <li><a href="#aria">ARIA</a></li>
-            <li><a href="#form">Forms</a></li>
+            <li>After you click a navigation item, tabbing through the website pops you back up to the top of the page.</li>
+            <li>The form at the bottom can't be submitted with just your keyboard.</li>
+            <li>There is no "skip link" for getting right to the main content.</li>
           </ol>
         </main>
 
-        <main id="keyboard-navigation">
-          <h2>Keyboard Navigation</h2>
+        <main id="active-element">
+          <h2>activeElement</h2>
+
+          <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/activeElement">document.activeElement</a> can be used to get the currently focused element.</p>
+        </main>
+
+        <main id="tabindex">
+          <h2>Tabindex</h2>
 
           <p>Remember tabindex:</p>
 
@@ -60,18 +64,25 @@
             <li><b>0</b> in the natural tab order, and it can be focused</li>
             <li><b>1+</b> anti-pattern but can be used to jump to the fron tof the tab order, higher number, higher position</li>
           </ul>
-
         </main>
 
-        <main id="proper-html">
-          <h2>Proper HTML</h2>
-        </main>
+        <main id="tabbable-items">
+          <h2>Tabbable Items</h2>
 
-        <main id="aria">
-          <h2>ARIA</h2>
-          <h3>Accessible Rich Internet Applications</h3>
+          <p>There is a list of all focusable selectors on my <a href="https://github.com/jkup/focusable">focusable repo</a>. They are:
 
-          <p>The official site: <a href="https://www.w3.org/WAI/intro/aria">w3.org/WAI/intro/aria</a>
+<pre><code>a[href],
+area[href],
+input:not([disabled]),
+select:not([disabled]),
+textarea:not([disabled]),
+button:not([disabled]),
+iframe,
+object,
+embed,
+[tabindex="0"],
+[contenteditable]
+</code></pre>
         </main>
 
         <main id="form">
