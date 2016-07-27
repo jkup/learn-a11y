@@ -6,27 +6,14 @@ A web app for learning web accessibility.
 
 This is meant to accompany my Introduction to Accessibility workshop but my hope is that it will stand fine on its own.
 
-> Requires some type of http server. I recommend node's http-server package.
-
 ## Installation
 
-### Node
+This is made to be as easy as possible. Just download or clone the repository and open index.html in your favorite browser!
 
-```
-npm install -g http-server
-git clone https://github.com/jkup/learn-a11y.git
-cd learn-a11y
-http-server
-```
+## Exercises
 
-Then navigate to http://localhost:8080
+All exercises should be clearly explained. Please don't hesitate to ask or open an issue if there is any confusion. Some of them are vague, like the semantic HTML section. There is no *right* answer for these, just poke around the code and see if you can improve the experience for users with disabilities.
 
-### Python
+### Coding challenges
 
-Download and unzip https://github.com/jkup/learn-a11y/archive/master.zip
-```
-cd learn-a11y
-python -m SimpleHTTPServer
-```
-
-Then navigate to http://localhost:8000
+There are a few exercises that will require writing a fair amount of JavaScript code. Don't worry too much about providing the most efficient, clean or modern solution! Remember, this class is about making great products. The jQuery library is included on every page in an attempt to make your jobs easier!
