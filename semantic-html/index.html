@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Learn a11y</title>
+    <title>Semantic HTML</title>
 
     <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="/css/style.css" media="screen" charset="utf-8">
@@ -18,18 +18,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">Learn a11y</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="/keyboard-navigation/">Keyboard Navigation</a></li>
-            <li><a href="/focus-control/">Focus Control</a></li>
-            <li><a href="/screen-readers/">Screen Readers</a></li>
-            <li><a href="/semantic-html/">Semantic HTML</a></li>
-            <li><a href="/aria/">ARIA</a></li>
-            <li><a href="/resources/">Resources</a></li>
+            <li><a href="/"><span class="glyphicon glyphicon-arrow-left"></span> Back</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -37,18 +31,38 @@
 
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
-        <h1>Learn Accessibility</h1>
+        <h1>Semantic HTML</h1>
 
-        <h2>Our Projects:</h2>
+        <p>There are quite a few things wrong here, can you find and fix them?</p>
 
-        <ol>
-          <li><a href="/keyboard-navigation/">Keyboard Navigation</a></li>
-          <li><a href="/focus-control/">Focus Control</a></li>
-          <li><a href="/screen-readers/">Screen Readers</a></li>
-          <li><a href="/semantic-html/">Semantic HTML</a></li>
-          <li><a href="/aria/">ARIA</a></li>
-          <li><a href="/resources/">Resources</a></li>
-        </ol>
+        <div class="row">
+          <div class="article col-md-4">
+            <h2>Article One</h2>
+
+            <p>Some sample text. Read this article</p>
+
+            <div onclick="someFunction" onKeyUp="someFunction" class="btn btn-default">Share</div>
+            <div onclick="someFunction" onKeyUp="someFunction" class="btn btn-primary">Read More</div>
+          </div>
+
+          <div class="article col-md-4">
+            <h2>Article Two</h2>
+
+            <p>Some sample text. Read this article</p>
+
+            <div onclick="someFunction" onKeyUp="someFunction" class="btn btn-default">Share</div>
+            <div onclick="someFunction" onKeyUp="someFunction" class="btn btn-primary">Read More</div>
+          </div>
+
+          <div class="article col-md-4">
+            <h2>Article Three</h2>
+
+            <p>Some sample text. Read this article</p>
+
+            <div onclick="someFunction" onKeyUp="someFunction" class="btn btn-default">Share</div>
+            <div onclick="someFunction" onKeyUp="someFunction" class="btn btn-primary">Read More</div>
+          </div>
+        </div>
       </div>
     </div>
     <script type="text/javascript" src="/js/jquery.min.js"></script>

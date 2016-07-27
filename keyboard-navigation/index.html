@@ -28,6 +28,7 @@
             <li><a href="#focus">Focus</a></li>
             <li><a href="#tabindex">Tabindex</a></li>
             <li><a href="#tabbable-items">Tabbable Items</a></li>
+            <li><a href="#skip-links">Skip Links</a></li>
             <li><a href="#form">Forms</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
@@ -83,6 +84,25 @@ embed,
 [tabindex="0"],
 [contenteditable]
 </code></pre>
+        </main>
+
+        <main id="skip-links">
+          <h2>Skip Links</h2>
+
+          <p>Learn more about <a href="http://webaim.org/techniques/skipnav/">Skip Links</a> here.</p>
+
+          <h3>Your HTML</h3>
+<pre><code>&lt;a href="#maincontent" class="skip-link">
+  Skip to main content
+&lt;/a>
+
+&lt;div class="navigation">
+  &lt;!-- Your navigation -->
+&lt;/div>
+
+&lt;div id="maincontent" tabindex="-1">
+  &lt;!-- Your Content -->
+&lt;/div></code></pre>
         </main>
 
         <main id="form">

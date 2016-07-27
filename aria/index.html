@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Learn a11y</title>
+    <title>Keyboard Navigation</title>
 
     <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="/css/style.css" media="screen" charset="utf-8">
@@ -18,18 +18,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">Learn a11y</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="/keyboard-navigation/">Keyboard Navigation</a></li>
-            <li><a href="/focus-control/">Focus Control</a></li>
-            <li><a href="/screen-readers/">Screen Readers</a></li>
-            <li><a href="/semantic-html/">Semantic HTML</a></li>
-            <li><a href="/aria/">ARIA</a></li>
-            <li><a href="/resources/">Resources</a></li>
+            <li><a href="/"><span class="glyphicon glyphicon-arrow-left"></span> Back</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -37,21 +31,28 @@
 
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
-        <h1>Learn Accessibility</h1>
-
-        <h2>Our Projects:</h2>
+        <h1>ARIA Challenge</h1>
 
         <ol>
-          <li><a href="/keyboard-navigation/">Keyboard Navigation</a></li>
-          <li><a href="/focus-control/">Focus Control</a></li>
-          <li><a href="/screen-readers/">Screen Readers</a></li>
-          <li><a href="/semantic-html/">Semantic HTML</a></li>
-          <li><a href="/aria/">ARIA</a></li>
-          <li><a href="/resources/">Resources</a></li>
+          <li>Write some JavaScript in aria.js to give increment and decrement functionality.</li>
+          <li>Use ARIA live regions so that screen readers announce when the count changes.</li>
         </ol>
+
+        <div aria-live="assertive" aria-relevant="additions">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div id="count">0</div>
+            </div>
+          </div>
+        </div>
+
+        <button id="inc" class="btn btn-primary">Increment</button>
+        <button id="dec" class="btn btn-default">Decrement</button>
+
       </div>
     </div>
     <script type="text/javascript" src="/js/jquery.min.js"></script>
     <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/aria.js"></script>
   </body>
 </html>
