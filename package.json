@@ -1,6 +1,6 @@
 {
   "name": "learn-a11y",
-  "version": "0.0.11",
+  "version": "1.0.0",
   "description": "A web app for learning web accessibility",
   "main": "./lib/index.js",
   "scripts": {

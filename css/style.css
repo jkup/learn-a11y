@@ -8,3 +8,20 @@ main {
   height: 1000px;
   margin: 25px 0;
 }
+
+.colors-one,
+.colors-one h2 {
+  color: #EBEA76;
+}
+
+.colors-two,
+.colors-two h2 {
+  background: #00CD34;
+  color: #BC00BB;
+}
+
+.colors-three,
+.colors-three h2 {
+  background: green;
+  color: red;
+}
