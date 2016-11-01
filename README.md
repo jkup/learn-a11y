@@ -2,6 +2,8 @@
 
 A web app for learning web accessibility.
 
+[![Build Status](https://travis-ci.org/jkup/learn-a11y.svg?branch=master)](https://travis-ci.org/jkup/learn-a11y)
+
 [![NPM](https://nodei.co/npm/learn-a11y.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/learn-a11y/)
 
 This is meant to accompany my Introduction to Accessibility workshop but my hope is that it will stand fine on its own.
