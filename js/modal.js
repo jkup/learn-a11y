@@ -6,6 +6,8 @@ var cancelButton = document.querySelector('.focus-modal-cancel');
 modalButton.addEventListener('click', open);
 cancelButton.addEventListener('click', close);
 
+// Get a list of tabbable elements here:
+// https://github.com/jkup/focusable
 
 function open() {
   // Show the modal and overlay
