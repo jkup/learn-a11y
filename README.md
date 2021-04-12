@@ -14,7 +14,7 @@ This is made to be as easy as possible. Just download or clone the repository an
 
 ## Exercises
 
-All exercises should be clearly explained. Please don't hesitate to ask or open an issue if there is any confusion. Some of them are vague, like the semantic HTML section. There is no *right* answer for these, just poke around the code and see if you can improve the experience for users with disabilities.
+All exercises should be clearly explained. Please don't hesitate to ask or open an issue if there is any confusion. Some of them are vague, like the semantic HTML section. There is no _right_ answer for these, just poke around the code and see if you can improve the experience for users with disabilities.
 
 ### Coding challenges
 
@@ -29,3 +29,60 @@ There are a few exercises that will require writing a fair amount of JavaScript 
 - tota11y still looks like it's in use.
 - Addy's a11y tool has been deprecated in favor of Lighthouse / axe-core.
 - React-a11y is still a thing, as well as [React-axe](https://github.com/dequelabs/react-axe)
+
+# Accessibility:
+
+# alt tag for img attribute - voiceover(screen reader) will read it
+
+# Writing good alt text
+
+    - Be accurate, be succint, dont be redundant, dont use image of or graphic of"
+
+- alt="" - if its empty it will get skipped
+- alt="UPPSERCASE" individually reads letters
+
+# Hide from screen readers
+
+# Frameworks have special classes
+
+- display: none;
+- visibility: hidden;
+- <input hidden/>
+
+# Hide from user but show to screen readers (knock it off the screen)
+
+- .screenreader {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  }
+
+# Label
+
+- They are important for screen readers so that as the user is tabbing through they know what they are supposed to do there
+  <label for ="username">Enter Your User Name</label>
+  <input type="text" id="username">
+
+# aria-labelledby
+
+- Instead of label you can define relationship for divs using aria-labelledby. When you have forms broken into sections.
+- <div id="billing">Billing Address</div>
+  <div>
+      <div id="name">Name</div>
+      <input type="text" aria-labelledby="billing name" />
+  </div>
+  <div>
+      <div id="address">Address</div>
+      <input type="text" aria-labelledby="billing address"></div>
+  </div>
+
+# ARIA Roles
+
+- Sometimes it's nice to have both HTML5 and ARIA roles for older browsers
+<article role="article">Your Content</article>
+
+- Will turn into
+
+<div role="article">Your Content</div>

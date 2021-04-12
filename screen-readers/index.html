@@ -33,26 +33,26 @@
       <div class="col-md-10 col-md-offset-1">
         <h1>Screen Reader Example</h1>
 
-        <img src="../images/pic.jpg" />
+        <img alt="image of three cats" src="../images/pic.jpg" />
 
-        <h2>Sign up for our mailing list!</h2>
+        <label for="Form Title">Sign up for our mailing list!</label> 
 
         <form style="margin-bottom: 150px;">
-          <p>Email Address:</p>
+          <label for="Email">Enter your email</label>
+          <input aria-labelledby="enter email" class="form-control" type="text" />
+
+          <label for="name">First and Last name:</label>
           <input class="form-control" type="text" />
 
-          <p>First and Last name:</p>
-          <input class="form-control" type="text" />
-
-          <p>How often would you like to recieve email from us?</p>
-          <select class="form-control">
+          <label for="frequency">How often would you like to recieve email from us?</label>
+          <select id="frequency" class="form-control">
             <option>Daily</option>
             <option>Weekly</option>
             <option>Monthly</option>
             <option>Never</option>
           </select>
 
-          <p>Security: What is in the above picture?</p>
+          <label for="security question">Security: What is in the above picture?</label>
           <input class="form-control" type="text" />
         </form>
 
