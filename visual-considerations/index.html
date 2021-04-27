@@ -17,15 +17,15 @@
           <a href="../accessible-html/index.html">Accessible HTML</a>
         </li>
         <li>
+          <a href="../aria/index.html">ARIA</a>
+        </li>
+        <li>
           <a href="../focus-management/index.html">Focus Management</a>
         </li>
         <li>
-          <a href="../visual-considerations/index.html">
-            Visual Considerations
-          </a>
-        </li>
-        <li>
-          <a href="../aria/index.html">ARIA</a>
+          <a href="../visual-considerations/index.html"
+            >Visual Considerations</a
+          >
         </li>
         <li>
           <a href="../tooling/index.html">Tooling</a>
@@ -55,6 +55,17 @@
         color checker?
       </p>
       <img src="../static/devtools-a11y.png" alt="DevTools color checker" />
+      <h3>Colors and forms</h3>
+      <p>
+        An important consideration for colorblind users is making sure that
+        color isn't the <b>only</b> way users can tell if there is an error with
+        the form. For example, a red ring is not enough. Consider adding an icon
+        or an error label.
+      </p>
+      <img
+        src="../static/webaim-colors.png"
+        alt="WebAIM color recommendation"
+      />
       <h2>Visual Impairments</h2>
       <p>
         To simulate a number of visual impairments on any website, check out
@@ -64,8 +75,22 @@
       </p>
       <img src="../static/nocoffee.png" alt="NoCoffee simulator" />
       <h2>Proximity of notifications from what you're doing</h2>
-      <p>TODO add anecdote</p>
       <p>Helps neurological and also low vision (another curb cut example)</p>
+      <h2>Setting the language</h2>
+      <p>
+        Remember to set the lang attribute both on the top level html tag as
+        well as any sections where the language deviates from it.
+      </p>
+      <img
+        src="../static/webaim-language.png"
+        alt="WebAIM language recommendations"
+      />
+      <h2>Fix markup errors</h2>
+      <p>
+        Although it won't always have a user facing effect, it is recommended
+        that you find and fix and validation or parsing errors in your HTML.
+      </p>
+      <img src="../static/webaim-markup.png" alt="WebAIM markup criteria" />
       <h1>Neurocognitive</h1>
       <h2>Prefers Reduced Motion</h2>
       <p>
@@ -73,6 +98,14 @@
         system (Windows, Mac, Linux) and we can read that setting in CSS and
         swap out animations with more subtle effects.
       </p>
+      <p>
+        This is important both as a preference and also to avoid causing issues
+        for users who may suffer from seizures.
+      </p>
+      <img
+        src="../static/webaim-seizures.png"
+        alt="WebAIM seizure recommendations"
+      />
       <h3>The code</h3>
       <h4>HTML</h4>
       <pre>

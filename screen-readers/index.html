@@ -17,15 +17,15 @@
           <a href="../accessible-html/index.html">Accessible HTML</a>
         </li>
         <li>
+          <a href="../aria/index.html">ARIA</a>
+        </li>
+        <li>
           <a href="../focus-management/index.html">Focus Management</a>
         </li>
         <li>
-          <a href="../visual-considerations/index.html">
-            Visual Considerations
-          </a>
-        </li>
-        <li>
-          <a href="../aria/index.html">ARIA</a>
+          <a href="../visual-considerations/index.html"
+            >Visual Considerations</a
+          >
         </li>
         <li>
           <a href="../tooling/index.html">Tooling</a>
@@ -76,15 +76,52 @@
       </p>
       <h2>Alternative Text</h2>
       <p>
-        TODO (seo, empty tags, funny names from generated ones, don't use image
-        of)
+        By default, when a screenreader encounters an image, if it can't find
+        alt text it will read aloud the file's name.
       </p>
+      <p>
+        This gets especially tricky for user generated images which often get
+        hashed file names.
+      </p>
+      <img src="../static/funny-image-names.png" alt="funny image names" />
+      <p>
+        Adding an alt attribute will override that behavior. Screenreaders will
+        read the alternative text instead of the file name.
+      </p>
+      <pre>
+        <code class="language-html">
+          &lt;img src="https://pbs.twimg.com/media/KSJHECKJH983er.jpg" alt="A puppy in the park" />
+        </code>
+      </pre>
+      <h3>Skipping over images</h3>
+      <p>
+        Sometimes your website will have images that are strictly for decorative
+        purposes. In that case, an empty alt attribute will force the
+        screenreader to skip over the image.
+      </p>
+      <h3>A note on SEO</h3>
+      <p>
+        Search engines also make use of alternative text. For years SEO shops
+        have suggested stuffing the keywords you want to rank for into alt text
+        wherever possible. This provides a very bad accessibility experience.
+      </p>
+      <pre>
+        <code class="language-html">
+          &lt;img src="https://pbs.twimg.com/media/KSJHECKJH983er.jpg" alt="" />
+        </code>
+      </pre>
+      <img src="../static/webaim-alt-text.png" alt="WebAIM alt text criteria" />
       <h2>Captions for audio</h2>
       <p>
         Remember not all content on the web is visual! If your application has
         video content, be sure to use a captioning service to add closed
         captioning.
       </p>
+      <img
+        src="../static/webaim-captions.png"
+        alt="WebAIM's caption criteria"
+      />
     </div>
+    <script src="../js/prism.js"></script>
   </body>
 </html>

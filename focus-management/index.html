@@ -17,15 +17,15 @@
           <a href="../accessible-html/index.html">Accessible HTML</a>
         </li>
         <li>
+          <a href="../aria/index.html">ARIA</a>
+        </li>
+        <li>
           <a href="../focus-management/index.html">Focus Management</a>
         </li>
         <li>
-          <a href="../visual-considerations/index.html">
-            Visual Considerations
-          </a>
-        </li>
-        <li>
-          <a href="../aria/index.html">ARIA</a>
+          <a href="../visual-considerations/index.html"
+            >Visual Considerations</a
+          >
         </li>
         <li>
           <a href="../tooling/index.html">Tooling</a>
@@ -38,7 +38,17 @@
     <div id="container">
       <h1>Focus Management</h1>
       <h2>Keyboard only users</h2>
+      <p>
+        As users navigate around using only the keyboard, focus rings provide a
+        necessary clue as to the currently active item.
+      </p>
+      <img src="../static/webaim-focus.png" alt="WebAIM focus criteria" />
       <h3>Keyboard Shortcuts</h3>
+      <p>
+        Keyboard shortcuts are another curb cut example. Sites like Twitter and
+        Facebook offer keyboard shortcuts for almost any action which are great
+        for both keyboard only users <b>and</b> and power users!
+      </p>
       <h4>Twitter</h4>
       <img
         src="../static/twitter-keyboard.png"
@@ -50,17 +60,38 @@
         alt="facebook keyboard shortcuts"
       />
       <h2>Skip links</h2>
-      <p>TODO Exercise</p>
+      <p>
+        Skip links help users <b>skip</b> over large headers and navigation and
+        jump right into the "main" content of your site. When a user hits tab
+        for the first time, a button will appear and offer users to jump right
+        to the main section.
+      </p>
       <h3>Github</h3>
       <img src="../static/github-skip.png" alt="github skip link" />
       <h3>NYTimes</h3>
       <img src="../static/nytimes-skip.png" alt="nytimes skip link" />
-      <p>TODO add starbucks and show how to make one</p>
+      <h3>How to make a skip link</h3>
+      <div>
+        <ol>
+          <li>Create an anchor with the body "Skip to content"</li>
+          <li>Prepend it to the body of your website</li>
+          <li>Make it visually hidden</li>
+          <li>Give is a focus state which makes it visible</li>
+        </ol>
+      </div>
+      <img
+        src="../static/webaim-skip-links.png"
+        alt="WebAIM skip link recommendation"
+      />
       <h2>Tab Navigation</h2>
       <p>
         You can use the <b>tab</b> key to navigate to the next tabbable item and
         <b>shift + tab</b> to navigate to the previous item.
       </p>
+      <img
+        src="../static/webaim-keyboard.png"
+        alt="WebAIM keyboard only criteria"
+      />
       <h3>Tabbable elements include:</h3>
       <ul>
         <li><pre>&lt;a></pre></li>
@@ -140,9 +171,30 @@
       <button>The</button>
       <button>Left</button>
       <h2>Active Element</h2>
-      <p>TODO</p>
+      <p>
+        Sometimes, especially on single page applications, it's helpful to store
+        the currently focused element before a page transition so you can return
+        to it later.
+      </p>
+      <pre>
+        <code class="language-javascript">
+          // A modal is about to be opened
+          // Store the current news item
+          const currentItem = document.activeElement;
+          // Open the modal
+          // On modal close, refocus on the news item they had open
+          currentItem.focus()
+        </code>
+      </pre>
       <h2>Tab trapping</h2>
-      <p>Make a demo and an exercise</p>
+      <p>
+        Another useful concept is tab trapping. Consider opening a modal on a
+        page which contains a form. A keyboard only user will want to tab around
+        the form but unless we help, tabbing while focused on the last form
+        element will send us all the way back to the main document.
+      </p>
+      <p>TODO</p>
     </div>
+    <script src="../js/prism.js"></script>
   </body>
 </html>
