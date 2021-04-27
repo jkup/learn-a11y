@@ -1,66 +1,90 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Screen Readers</title>
-
-    <link rel="stylesheet" href="../css/bootstrap.min.css" media="screen" charset="utf-8">
-    <link rel="stylesheet" href="../css/style.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li><a href="../index.html"><span class="glyphicon glyphicon-arrow-left"></span> Back</a></li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-
-    <div class="row">
-      <div class="col-md-10 col-md-offset-1">
-        <h1>Screen Reader Example</h1>
-
-        <img src="../images/pic.jpg" />
-
-        <h2>Sign up for our mailing list!</h2>
-
-        <form style="margin-bottom: 150px;">
-          <p>Email Address:</p>
-          <input class="form-control" type="text" />
-
-          <p>First and Last name:</p>
-          <input class="form-control" type="text" />
-
-          <p>How often would you like to recieve email from us?</p>
-          <select class="form-control">
-            <option>Daily</option>
-            <option>Weekly</option>
-            <option>Monthly</option>
-            <option>Never</option>
-          </select>
-
-          <p>Security: What is in the above picture?</p>
-          <input class="form-control" type="text" />
-        </form>
-
-        <p>Your task is to make it so the entire form can be filled out with only the use of a screen reader.</p>
-
-      </div>
+    <header>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li>
+          <a href="../screen-readers/index.html">Screen Readers</a>
+        </li>
+        <li>
+          <a href="../accessible-html/index.html">Accessible HTML</a>
+        </li>
+        <li>
+          <a href="../focus-management/index.html">Focus Management</a>
+        </li>
+        <li>
+          <a href="../visual-considerations/index.html">
+            Visual Considerations
+          </a>
+        </li>
+        <li>
+          <a href="../aria/index.html">ARIA</a>
+        </li>
+        <li>
+          <a href="../tooling/index.html">Tooling</a>
+        </li>
+        <li>
+          <a href="../resources/index.html">Resources</a>
+        </li>
+      </ul>
+    </header>
+    <div id="container">
+      <h1>Screen Readers</h1>
+      <h2>How they work</h2>
+      <blockquote>
+        Screen readers convert digital text into synthesized speech. They
+        empower users to hear content and navigate with the keyboard. The
+        technology helps people who are blind or who have low vision to use
+        information technology with the same level of independence and privacy
+        as anyone else.
+      </blockquote>
+      <h2>What all they let you do</h2>
+      <ol>
+        <li>Read all content</li>
+        <li>Display a list of links</li>
+        <li>Display a list of headings</li>
+      </ol>
+      <h2>List of popular screen readers</h2>
+      <img
+        src="../static/screenreader-share.png"
+        alt="Screenreader user share"
+      />
+      <h2>Voiceover for Mac</h2>
+      <p>How to enable VoiceOver for Mac</p>
+      <ol>
+        <li>System Preferences</li>
+        <li>Accessibility</li>
+        <li>VoiceOver</li>
+        <li>Enable VoiceOver</li>
+        <li>cmd + f5</li>
+      </ol>
+      <h2>Chrome screenreader</h2>
+      <p>
+        Google offers a free screenreader built into the browser which you can
+        download as an extension
+        <a
+          href="https://chrome.google.com/webstore/detail/screen-reader/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en"
+          >here</a
+        >.
+      </p>
+      <h2>Alternative Text</h2>
+      <p>
+        TODO (seo, empty tags, funny names from generated ones, don't use image
+        of)
+      </p>
+      <h2>Captions for audio</h2>
+      <p>
+        Remember not all content on the web is visual! If your application has
+        video content, be sure to use a captioning service to add closed
+        captioning.
+      </p>
     </div>
-    <script type="text/javascript" src="../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
   </body>
 </html>

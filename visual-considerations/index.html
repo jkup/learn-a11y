@@ -1,0 +1,137 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colors</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li>
+          <a href="../screen-readers/index.html">Screen Readers</a>
+        </li>
+        <li>
+          <a href="../accessible-html/index.html">Accessible HTML</a>
+        </li>
+        <li>
+          <a href="../focus-management/index.html">Focus Management</a>
+        </li>
+        <li>
+          <a href="../visual-considerations/index.html">
+            Visual Considerations
+          </a>
+        </li>
+        <li>
+          <a href="../aria/index.html">ARIA</a>
+        </li>
+        <li>
+          <a href="../tooling/index.html">Tooling</a>
+        </li>
+        <li>
+          <a href="../resources/index.html">Resources</a>
+        </li>
+      </ul>
+    </header>
+    <div id="container">
+      <h1>Visual Considerations</h1>
+      <h2>Color Contrast</h2>
+      <h3>WebAIM</h3>
+      <p>
+        To check color contrast online, use the
+        <a href="https://webaim.org/resources/contrastchecker/"
+          >WebAIM contrast checker</a
+        >.
+      </p>
+      <img
+        src="../static/webaim-color-checker.png"
+        alt="WebAIM color checker"
+      />
+      <h3>Chrome DevTools</h3>
+      <p>
+        Did you know the Chrome DevTools come with a built-in accessibility
+        color checker?
+      </p>
+      <img src="../static/devtools-a11y.png" alt="DevTools color checker" />
+      <h2>Visual Impairments</h2>
+      <p>
+        To simulate a number of visual impairments on any website, check out
+        <a href="https://addons.mozilla.org/en-US/firefox/addon/nocoffee/"
+          >NoCoffee for Firefox</a
+        >
+      </p>
+      <img src="../static/nocoffee.png" alt="NoCoffee simulator" />
+      <h2>Proximity of notifications from what you're doing</h2>
+      <p>TODO add anecdote</p>
+      <p>Helps neurological and also low vision (another curb cut example)</p>
+      <h1>Neurocognitive</h1>
+      <h2>Prefers Reduced Motion</h2>
+      <p>
+        Users can set a "prefers reduced motion" setting in their operating
+        system (Windows, Mac, Linux) and we can read that setting in CSS and
+        swap out animations with more subtle effects.
+      </p>
+      <h3>The code</h3>
+      <h4>HTML</h4>
+      <pre>
+        <code class="language-html">
+          &lt;div class="animation">animated box&lt;/div>
+        </code>
+      </pre>
+      <h4>CSS</h4>
+      <pre>
+        <code class="language-css">
+          .animation {
+            animation: pulse 1s linear infinite both;
+          }
+          
+          @media (prefers-reduced-motion) {
+            .animation {
+              animation-name: dissolve;
+            }
+          }
+        </code>
+      </pre>
+      <h4>All Together</h4>
+      <img
+        style="max-width: 100%"
+        src="../static/reduced_motion.gif"
+        alt="reduced motion demo"
+      />
+      <h2>Prefers Color Scheme</h2>
+      <p>
+        Another amazing API is one that allows us to detect if the user prefers
+        a "light" or "dark" colorscheme.
+      </p>
+      <h3>The Code</h3>
+      <h4>HTML</h4>
+      <pre>
+        <code class="language-html">
+          &lt;div class="wrapper">
+            ...
+          &lt;/div>
+        </code>
+      </pre>
+      <h4>CSS</h4>
+      <pre>
+        <code class="language-css">
+          @media (prefers-color-scheme: dark) {
+            .wrapper {
+              background: black;
+            }
+          }
+
+          @media (prefers-color-scheme: light) {
+            .wrapper {
+              background: white;
+            }
+          }
+        </code>
+      </pre>
+      <p>Exercise 3</p>
+    </div>
+    <script src="../js/prism.js"></script>
+  </body>
+</html>

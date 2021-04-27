@@ -1,56 +1,75 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <title>Keyboard Navigation</title>
-
-    <link rel="stylesheet" href="../css/bootstrap.min.css" media="screen" charset="utf-8">
-    <link rel="stylesheet" href="../css/style.css" media="screen" charset="utf-8">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARIA</title>
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li><a href="../index.html"><span class="glyphicon glyphicon-arrow-left"></span> Back</a></li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-
-    <div class="row">
-      <div class="col-md-10 col-md-offset-1">
-        <h1>ARIA Challenge</h1>
-
-        <ol>
-          <li>Write some JavaScript in aria.js to give increment and decrement functionality.</li>
-          <li>Use ARIA live regions so that screen readers announce when the count changes.</li>
-        </ol>
-
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <div id="count">0</div>
-          </div>
-        </div>
-
-        <button id="inc" class="btn btn-primary">Increment</button>
-        <button id="dec" class="btn btn-default">Decrement</button>
-
-      </div>
+    <header>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li>
+          <a href="../screen-readers/index.html">Screen Readers</a>
+        </li>
+        <li>
+          <a href="../accessible-html/index.html">Accessible HTML</a>
+        </li>
+        <li>
+          <a href="../focus-management/index.html">Focus Management</a>
+        </li>
+        <li>
+          <a href="../visual-considerations/index.html">
+            Visual Considerations
+          </a>
+        </li>
+        <li>
+          <a href="../aria/index.html">ARIA</a>
+        </li>
+        <li>
+          <a href="../tooling/index.html">Tooling</a>
+        </li>
+        <li>
+          <a href="../resources/index.html">Resources</a>
+        </li>
+      </ul>
+    </header>
+    <div id="container">
+      <h1>ARIA</h1>
+      <p>
+        Check out the official
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA"
+          >ARIA Documentation</a
+        >.
+      </p>
+      <p>
+        For a complete list, also see the
+        <a href="https://www.w3.org/TR/html-aria/#aria-table">official spec</a>.
+      </p>
+      <h2>Labels</h2>
+      <p>label, labelledby, describedby</p>
+      <h2>Roles</h2>
+      <h2>CSS Selectors</h2>
+      <pre>
+        <code class="language-css">
+          .dropdown[aria-expanded="false"] .icon::after {
+            content: '▶';
+          }
+          .dropdown[aria-expanded="true"] .icon::after {
+            content: '▼';
+          }
+        </code>
+      </pre>
+      <h2>Live Regions</h2>
+      <p>
+        aria-live - off/polite/assertive aria-relevant -
+        additions/removals/text/all
+      </p>
+      <p>Roles, describedby, live regions, etc</p>
+      <p>exercise</p>
     </div>
-    <script type="text/javascript" src="../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../js/aria.js"></script>
+    <script src="../js/prism.js"></script>
   </body>
 </html>
