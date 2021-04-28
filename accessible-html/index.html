@@ -155,7 +155,29 @@
         </label>
         <input type="submit" value="Submit" />
       </form>
-      <p>TODO ARIA labels for non inputs</p>
+      <h3>Limitations with the &lt;label> tag</h3>
+      <p>
+        The label tag can only works with "labelable" elements. Those include:
+      </p>
+      <ul>
+        <li>&lt;button></li>
+        <li>&lt;input></li>
+        <li>&lt;keygen></li>
+        <li>&lt;meter></li>
+        <li>&lt;output></li>
+        <li>&lt;progress></li>
+        <li>&lt;select></li>
+        <li>&lt;textarea></li>
+      </ul>
+      <p>
+        If you ever need to label an element not on that list, use
+        <b>aria-label</b> instead.
+      </p>
+      <pre>
+        <code class="language-html">
+          &lt;div aria-label="Interactive div">Hello&lt;/div>
+        </code>
+      </pre>
       <h2>Screenreader only content</h2>
       <p>
         Sometimes you'll want to communicate with a screenreader directly! One

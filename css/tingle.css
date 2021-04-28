@@ -15,9 +15,10 @@
   align-items: center;
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
-  background: rgba(0, 0, 0, .9);
+  background: rgba(0, 0, 0, 0.9);
   opacity: 0;
-  cursor: url("data:image/svg+xml,%3Csvg width='19' height='19' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.514.535l-6.42 6.42L2.677.536a1.517 1.517 0 00-2.14 0 1.517 1.517 0 000 2.14l6.42 6.419-6.42 6.419a1.517 1.517 0 000 2.14 1.517 1.517 0 002.14 0l6.419-6.42 6.419 6.42a1.517 1.517 0 002.14 0 1.517 1.517 0 000-2.14l-6.42-6.42 6.42-6.418a1.517 1.517 0 000-2.14 1.516 1.516 0 00-2.14 0z' fill='%23FFF' fill-rule='nonzero'/%3E%3C/svg%3E"), auto;
+  cursor: url("data:image/svg+xml,%3Csvg width='19' height='19' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.514.535l-6.42 6.42L2.677.536a1.517 1.517 0 00-2.14 0 1.517 1.517 0 000 2.14l6.42 6.419-6.42 6.419a1.517 1.517 0 000 2.14 1.517 1.517 0 002.14 0l6.419-6.42 6.419 6.42a1.517 1.517 0 002.14 0 1.517 1.517 0 000-2.14l-6.42-6.42 6.42-6.418a1.517 1.517 0 000-2.14 1.516 1.516 0 00-2.14 0z' fill='%23FFF' fill-rule='nonzero'/%3E%3C/svg%3E"),
+    auto;
 }
 
 @supports (backdrop-filter: blur(12px)) {
@@ -104,10 +105,10 @@
 
 .tingle-modal-box__footer--sticky {
   position: fixed;
-  bottom: -200px; /* TODO : find a better way */
+  bottom: -200px;
   z-index: 10001;
   opacity: 1;
-  transition: bottom .3s ease-in-out .3s;
+  transition: bottom 0.3s ease-in-out 0.3s;
 }
 
 /* state
@@ -130,7 +131,7 @@
 }
 
 .tingle-modal--visible .tingle-modal-box {
-  animation: scale .2s cubic-bezier(.68, -.55, .265, 1.55) forwards;
+  animation: scale 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
 }
 
 .tingle-modal--overflow {
@@ -143,7 +144,7 @@
 
 .tingle-btn {
   display: inline-block;
-  margin: 0 .5rem;
+  margin: 0 0.5rem;
   padding: 1rem 2rem;
   border: none;
   background-color: grey;
@@ -155,7 +156,7 @@
   font-family: inherit;
   line-height: normal;
   cursor: pointer;
-  transition: background-color .4s ease;
+  transition: background-color 0.4s ease;
 }
 
 .tingle-btn--primary {
@@ -181,7 +182,7 @@
 /* responsive
 -------------------------------------------------------------- */
 
-@media (max-width : 540px) {
+@media (max-width: 540px) {
   .tingle-modal {
     top: 0px;
     display: block;
@@ -230,12 +231,14 @@
     display: inline-block;
     vertical-align: middle;
     font-size: 1.6rem;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+      "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+      "Helvetica Neue", sans-serif;
   }
 
   .tingle-modal__closeIcon {
     display: inline-block;
-    margin-right: .8rem;
+    margin-right: 0.8rem;
     width: 1.6rem;
     vertical-align: middle;
     font-size: 0;
@@ -248,7 +251,7 @@
 @keyframes scale {
   0% {
     opacity: 0;
-    transform: scale(.9);
+    transform: scale(0.9);
   }
   100% {
     opacity: 1;
