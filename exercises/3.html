@@ -1,0 +1,42 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Screen Readers</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header>
+      <ul>
+        <li>
+          <a href="../aria/index.html">&larr; Back</a>
+        </li>
+      </ul>
+    </header>
+    <div id="container">
+      <h1>Exercise 3</h1>
+      <p>
+        Use aria live regions to announce to the user whenever the count below
+        updates! Turn your screenreader on to test. Also notice how changing
+        between polite and assertive changes your experience.
+      </p>
+      <div>
+        You have
+        <div id="counter">0</div>
+        likes on your website
+      </div>
+    </div>
+    <script>
+      function makeTimeout() {
+        var number = Math.floor(Math.random() * 10) + 1;
+        setTimeout(() => {
+          var counter = document.getElementById("counter");
+          counter.innerText = parseInt(counter.innerText, 10) + 1;
+          makeTimeout();
+        }, number + "00");
+      }
+      makeTimeout();
+    </script>
+  </body>
+</html>
