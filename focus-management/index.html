@@ -229,7 +229,7 @@
 
       // set content
       modal.setContent(
-        "<h1>Tab Trapping Example</h1><form><input type='text' placeholder='first name' /><input type='text' placeholder='last name' /><input type='submit' value='submit' /></form>"
+        "<h1>Tab Trapping Example</h1><form><input class='first' type='text' placeholder='first name' /><input type='text' placeholder='last name' /><input type='submit' value='submit' /></form>"
       );
 
       // add a button
@@ -245,7 +245,7 @@
       // add another button
       modal.addFooterBtn(
         "Dangerous action !",
-        "tingle-btn tingle-btn--danger",
+        "tingle-btn tingle-btn--danger last",
         function () {
           // here goes some logic
           modal.close();
@@ -255,6 +255,25 @@
       btn.addEventListener("click", () => {
         // open modal
         modal.open();
+      });
+
+      var firstEl = document.querySelector(".first");
+      var lastEl = document.querySelector(".last");
+
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "Tab" || e.keyCode === 9) {
+          if (e.shiftKey) {
+            if (document.activeElement === firstEl) {
+              lastEl.focus();
+              e.preventDefault();
+            }
+          } else {
+            if (document.activeElement === lastEl) {
+              firstEl.focus();
+              e.preventDefault();
+            }
+          }
+        }
       });
     </script>
   </body>
