@@ -52,9 +52,7 @@
     </div>
     <script>
       var main = document.querySelector(".main");
-      var currentlyLightTheme = window.matchMedia(
-        "(prefers-color-scheme: light)"
-      );
+      var currentlyLightTheme = window.matchMedia("(prefers-color-scheme: light)").matches
       function toggle() {
         if (currentlyLightTheme) {
           main.className = "overrideLight";
