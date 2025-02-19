@@ -11,13 +11,227 @@
     <main>
       <h1>Exercise 4: ARIA Labels and Roles</h1>
       <p>
-        In this exercise, you'll learn how to use ARIA labels and roles to
-        enhance the accessibility of complex web components.
+        This exercise demonstrates the importance of ARIA live regions for
+        dynamic content. Try using a screen reader with this sports score app:
       </p>
 
       <section class="exercise-content">
-        <!-- Exercise content will go here -->
+        <div class="scoreboard">
+          <div class="scoreboard-header">
+            <h2>Live Matches</h2>
+            <div class="last-update">
+              Last update: <span id="lastUpdateTime">Just now</span>
+            </div>
+          </div>
+          <p class="hint">
+            Note: Scores update every 15 seconds. Try following the updates with
+            a screen reader!
+          </p>
+
+          <div class="match-container">
+            <!-- Match 1 -->
+            <div class="match">
+              <div class="match-header">
+                <span class="league">Premier League</span>
+                <span class="match-time">72'</span>
+              </div>
+              <div class="teams">
+                <div class="team">
+                  <span class="team-name">Crystal Phoenixes</span>
+                  <span class="score" id="team1-score">2</span>
+                </div>
+                <div class="team">
+                  <span class="team-name">Royal Lions FC</span>
+                  <span class="score" id="team2-score">1</span>
+                </div>
+              </div>
+              <div class="match-status" id="match1-status">
+                Latest: Goal! Crystal Phoenixes score in the 70th minute!
+              </div>
+            </div>
+
+            <!-- Match 2 -->
+            <div class="match">
+              <div class="match-header">
+                <span class="league">Champions Cup</span>
+                <span class="match-time">54'</span>
+              </div>
+              <div class="teams">
+                <div class="team">
+                  <span class="team-name">Stellar United</span>
+                  <span class="score" id="team3-score">0</span>
+                </div>
+                <div class="team">
+                  <span class="team-name">Atlas Warriors</span>
+                  <span class="score" id="team4-score">0</span>
+                </div>
+              </div>
+              <div class="match-status" id="match2-status">
+                Latest: Yellow card shown to Atlas Warriors defender
+              </div>
+            </div>
+
+            <!-- Match 3 -->
+            <div class="match">
+              <div class="match-header">
+                <span class="league">Europa Division</span>
+                <span class="match-time">89'</span>
+              </div>
+              <div class="teams">
+                <div class="team">
+                  <span class="team-name">Thunder City</span>
+                  <span class="score" id="team5-score">3</span>
+                </div>
+                <div class="team">
+                  <span class="team-name">Coastal Dynamos</span>
+                  <span class="score" id="team6-score">3</span>
+                </div>
+              </div>
+              <div class="match-status" id="match3-status">
+                Latest: 4 minutes of added time announced
+              </div>
+            </div>
+          </div>
+
+          <div class="instructions">
+            <h3>Making this Accessible</h3>
+            <p>
+              This scoreboard updates automatically, but screen reader users
+              won't know when updates occur. To fix this:
+            </p>
+            <ol>
+              <li>
+                Add appropriate <code>aria-live</code> regions to the score and
+                status elements
+              </li>
+              <li>Consider which elements should be "polite" vs "assertive"</li>
+              <li>Test with a screen reader to verify the experience</li>
+            </ol>
+          </div>
+        </div>
       </section>
     </main>
+
+    <script>
+      // Simulated match events
+      const matchEvents = [
+        {
+          match: 1,
+          events: [
+            {
+              time: "75'",
+              status: "Corner kick for Royal Lions FC",
+              scores: [2, 1],
+            },
+            {
+              time: "78'",
+              status: "Shot on goal by Crystal Phoenixes!",
+              scores: [2, 1],
+            },
+            {
+              time: "82'",
+              status: "GOAL! Royal Lions FC equalize!",
+              scores: [2, 2],
+            },
+          ],
+        },
+        {
+          match: 2,
+          events: [
+            {
+              time: "57'",
+              status: "GOAL! Stellar United take the lead!",
+              scores: [1, 0],
+            },
+            {
+              time: "63'",
+              status: "Substitution for Atlas Warriors",
+              scores: [1, 0],
+            },
+            {
+              time: "68'",
+              status: "GOAL! Atlas Warriors level the score!",
+              scores: [1, 1],
+            },
+          ],
+        },
+        {
+          match: 3,
+          events: [
+            {
+              time: "90'",
+              status: "GOAL! Thunder City take the lead in stoppage time!",
+              scores: [4, 3],
+            },
+            {
+              time: "90+2'",
+              status: "Thunder City defending deeply",
+              scores: [4, 3],
+            },
+            {
+              time: "90+4'",
+              status: "Full Time! Thunder City win 4-3!",
+              scores: [4, 3],
+            },
+          ],
+        },
+      ];
+
+      // Keep track of current event for each match
+      const currentEvents = [0, 0, 0];
+
+      // Update a specific match
+      function updateMatch(matchIndex) {
+        const match = matchEvents[matchIndex];
+        const eventIndex = currentEvents[matchIndex];
+
+        if (eventIndex >= match.events.length) return;
+
+        const event = match.events[eventIndex];
+        const matchNum = matchIndex + 1;
+
+        // Update time
+        document.querySelector(
+          `.match:nth-child(${matchNum}) .match-time`
+        ).textContent = event.time;
+
+        // Update status
+        document.getElementById(
+          `match${matchNum}-status`
+        ).textContent = `Latest: ${event.status}`;
+
+        // Update scores
+        document.getElementById(`team${matchNum * 2 - 1}-score`).textContent =
+          event.scores[0];
+        document.getElementById(`team${matchNum * 2}-score`).textContent =
+          event.scores[1];
+
+        // Update last update time
+        const now = new Date();
+        const timeString = now.toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+        });
+        document.getElementById("lastUpdateTime").textContent = timeString;
+
+        currentEvents[matchIndex]++;
+      }
+
+      // Randomly update one match every 15 seconds
+      setInterval(() => {
+        const matchIndex = Math.floor(Math.random() * 3);
+        updateMatch(matchIndex);
+      }, 15000);
+
+      // Initial last update time
+      const now = new Date();
+      document.getElementById("lastUpdateTime").textContent =
+        now.toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+        });
+    </script>
   </body>
 </html>

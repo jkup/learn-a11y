@@ -289,3 +289,133 @@ article {
 [hidden] {
   display: none !important;
 }
+
+/* Scoreboard styles */
+.scoreboard {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.hint {
+  background-color: #e8f4f8;
+  padding: 1rem;
+  border-radius: 4px;
+  border-left: 4px solid #3498db;
+  margin: 1rem 0;
+}
+
+.match-container {
+  display: grid;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.match {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid #dee2e6;
+  transition: transform 0.2s ease;
+}
+
+.match:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.match-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.league {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.match-time {
+  background: #e74c3c;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.teams {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.team {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background: white;
+  border-radius: 4px;
+}
+
+.team-name {
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.score {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2c3e50;
+  min-width: 1.5em;
+  text-align: center;
+}
+
+.match-status {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: #fff;
+  border-radius: 4px;
+  color: #2c3e50;
+  font-size: 0.9rem;
+  border-left: 4px solid #3498db;
+}
+
+.instructions {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+}
+
+.instructions h3 {
+  margin-top: 0;
+  color: #2c3e50;
+}
+
+.instructions ol {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.instructions li {
+  margin: 0.5rem 0;
+}
+
+.scoreboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.last-update {
+  font-size: 0.9rem;
+  color: #666;
+  background: #f8f9fa;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 1px solid #dee2e6;
+}
