@@ -54,3 +54,34 @@ h1 {
 .back-link:hover {
   text-decoration: underline;
 }
+
+/* Screen reader exercise styles */
+kbd {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 3px;
+  padding: 2px 4px;
+  font-family: monospace;
+}
+
+code {
+  background-color: #f8f9fa;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+article {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+}
+
+.practice {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background-color: #e8f4f8;
+  border-radius: 8px;
+}

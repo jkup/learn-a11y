@@ -12,12 +12,172 @@
       <h1>Exercise 1: Screen Reader Accessibility</h1>
       <p>
         In this exercise, you'll learn how to make your web content accessible
-        to screen readers.
+        to screen readers. First, let's get you set up with a screen reader
+        based on your operating system.
       </p>
 
       <section class="exercise-content">
-        <!-- Exercise content will go here -->
+        <h2>Choosing a Screen Reader</h2>
+
+        <article id="macos">
+          <h3>macOS: VoiceOver</h3>
+          <p>VoiceOver comes pre-installed on all Mac computers.</p>
+          <ol>
+            <li>
+              Press <kbd>Command</kbd> + <kbd>F5</kbd> to turn VoiceOver on/off,
+              or
+            </li>
+            <li>Go to System Settings > Accessibility > VoiceOver</li>
+            <li>
+              Basic commands:
+              <ul>
+                <li>
+                  Navigate: <kbd>Control</kbd> + <kbd>Option</kbd> + arrow keys
+                </li>
+                <li>
+                  Read page: <kbd>Control</kbd> + <kbd>Option</kbd> +
+                  <kbd>A</kbd>
+                </li>
+                <li>Stop reading: <kbd>Control</kbd></li>
+              </ul>
+            </li>
+          </ol>
+        </article>
+
+        <article id="windows">
+          <h3>Windows: NVDA</h3>
+          <p>NVDA is a free, open-source screen reader for Windows.</p>
+          <ol>
+            <li>
+              Download NVDA from
+              <a href="https://www.nvaccess.org/download/" target="_blank"
+                >nvaccess.org</a
+              >
+            </li>
+            <li>Run the installer and follow the setup wizard</li>
+            <li>
+              Basic commands:
+              <ul>
+                <li>
+                  Start/Stop reading: <kbd>Insert</kbd> + <kbd>Down Arrow</kbd>
+                </li>
+                <li>Navigate by headings: <kbd>H</kbd></li>
+                <li>Navigate by links: <kbd>Tab</kbd></li>
+                <li>Stop speaking: <kbd>Control</kbd></li>
+              </ul>
+            </li>
+          </ol>
+        </article>
+
+        <article id="linux">
+          <h3>Linux: Orca</h3>
+          <p>
+            Orca is the default screen reader for GNOME-based Linux
+            distributions.
+          </p>
+          <ol>
+            <li>
+              Open Terminal and type:
+              <code>sudo apt-get install orca</code> (Ubuntu/Debian)
+            </li>
+            <li>
+              Launch Orca: <kbd>Super</kbd> + <kbd>Alt</kbd> + <kbd>O</kbd>
+            </li>
+            <li>
+              Basic commands:
+              <ul>
+                <li>
+                  Start/Stop reading: <kbd>Orca Modifier</kbd> + <kbd>H</kbd>
+                </li>
+                <li>Navigate: <kbd>Arrow keys</kbd></li>
+                <li>
+                  Read current line: <kbd>Orca Modifier</kbd> + <kbd>L</kbd>
+                </li>
+              </ul>
+            </li>
+          </ol>
+        </article>
+
+        <article id="browser">
+          <h3>Browser Extension: ChromeVox</h3>
+          <p>
+            If you prefer not to install a system-wide screen reader, ChromeVox
+            is a good alternative that works directly in Chrome.
+          </p>
+          <ol>
+            <li>
+              Install
+              <a
+                href="https://chrome.google.com/webstore/detail/chromevox-classic-extensi/kgejglhpjiefppelpmljglcjbhoiplfn"
+                target="_blank"
+                >ChromeVox from the Chrome Web Store</a
+              >
+            </li>
+            <li>
+              After installation, click the ChromeVox icon in your extensions
+              bar to enable it
+            </li>
+            <li>
+              Basic commands:
+              <ul>
+                <li>Navigate: <kbd>Search</kbd> + arrow keys</li>
+                <li>Click: <kbd>Search</kbd> + <kbd>Space</kbd></li>
+                <li>
+                  Read from current position: <kbd>Search</kbd> + <kbd>R</kbd>
+                </li>
+              </ul>
+            </li>
+          </ol>
+        </article>
+
+        <section class="practice">
+          <h2>Practice Exercise</h2>
+          <p>Once you have a screen reader set up, try the following:</p>
+          <ol>
+            <li>
+              Navigate back to the workshop homepage using your screen reader
+            </li>
+            <li>Listen to how the exercise list is read</li>
+            <li>Try to understand the page structure through headings</li>
+          </ol>
+          <p>
+            Notice how semantic HTML elements and proper heading structure make
+            navigation easier for screen reader users.
+          </p>
+        </section>
       </section>
     </main>
+
+    <style>
+      kbd {
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        border-radius: 3px;
+        padding: 2px 4px;
+        font-family: monospace;
+      }
+
+      code {
+        background-color: #f8f9fa;
+        padding: 2px 4px;
+        border-radius: 3px;
+        font-family: monospace;
+      }
+
+      article {
+        margin: 2rem 0;
+        padding: 1.5rem;
+        background-color: #fff;
+        border-radius: 8px;
+        border: 1px solid #dee2e6;
+      }
+
+      .practice {
+        margin-top: 3rem;
+        padding: 1.5rem;
+        background-color: #e8f4f8;
+        border-radius: 8px;
+      }
+    </style>
   </body>
 </html>
