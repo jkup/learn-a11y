@@ -16,8 +16,205 @@
       </p>
 
       <section class="exercise-content">
-        <!-- Exercise content will go here -->
+        <div class="contrast-checker">
+          <div class="controls">
+            <div class="control-group">
+              <label for="textColor">Text Color:</label>
+              <input type="color" id="textColor" value="#000000" />
+            </div>
+            <div class="control-group">
+              <label for="backgroundColor">Background Color:</label>
+              <input type="color" id="backgroundColor" value="#ffffff" />
+            </div>
+            <div class="control-group">
+              <label for="fontSize">Font Size:</label>
+              <select id="fontSize">
+                <option value="14">14px (Normal)</option>
+                <option value="18">18px (Large)</option>
+                <option value="24">24px (Larger)</option>
+              </select>
+            </div>
+            <div class="control-group">
+              <label for="fontWeight">Font Weight:</label>
+              <select id="fontWeight">
+                <option value="normal">Normal</option>
+                <option value="bold">Bold</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="preview" id="previewText">
+            Preview Text - The quick brown fox jumps over the lazy dog
+          </div>
+
+          <div class="results">
+            <div class="result-item">
+              <h3>Contrast Ratio: <span id="contrastRatio">21:1</span></h3>
+            </div>
+            <div class="result-item">
+              <h4>WCAG 2.1 Level AA</h4>
+              <p>Normal Text: <span id="normalAA">✅ Pass</span></p>
+              <p>Large Text: <span id="largeAA">✅ Pass</span></p>
+            </div>
+            <div class="result-item">
+              <h4>WCAG 2.1 Level AAA</h4>
+              <p>Normal Text: <span id="normalAAA">✅ Pass</span></p>
+              <p>Large Text: <span id="largeAAA">✅ Pass</span></p>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
+
+    <style>
+      .contrast-checker {
+        background: #fff;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .controls {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .control-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .control-group label {
+        font-weight: bold;
+      }
+
+      .control-group input,
+      .control-group select {
+        padding: 0.5rem;
+        border: 1px solid #dee2e6;
+        border-radius: 4px;
+      }
+
+      .preview {
+        padding: 2rem;
+        margin: 1rem 0;
+        border-radius: 4px;
+        min-height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border: 1px solid #dee2e6;
+      }
+
+      .results {
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+      }
+
+      .result-item {
+        background: #f8f9fa;
+        padding: 1rem;
+        border-radius: 4px;
+      }
+
+      .result-item h3,
+      .result-item h4 {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+      }
+    </style>
+
+    <script>
+      // Calculate relative luminance
+      function getLuminance(r, g, b) {
+        let [rs, gs, bs] = [r, g, b].map((c) => {
+          c = c / 255;
+          return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+        });
+        return 0.2126 * rs + 0.7152 * gs + 0.0722 * bs;
+      }
+
+      // Calculate contrast ratio
+      function getContrastRatio(l1, l2) {
+        let lighter = Math.max(l1, l2);
+        let darker = Math.min(l1, l2);
+        return (lighter + 0.05) / (darker + 0.05);
+      }
+
+      function hexToRgb(hex) {
+        const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return result
+          ? {
+              r: parseInt(result[1], 16),
+              g: parseInt(result[2], 16),
+              b: parseInt(result[3], 16),
+            }
+          : null;
+      }
+
+      function updateContrast() {
+        const textColor = hexToRgb(textColorInput.value);
+        const bgColor = hexToRgb(bgColorInput.value);
+        const fontSize = parseInt(fontSizeInput.value);
+        const isBold = fontWeightInput.value === "bold";
+
+        // Calculate luminance for both colors
+        const textLuminance = getLuminance(
+          textColor.r,
+          textColor.g,
+          textColor.b
+        );
+        const bgLuminance = getLuminance(bgColor.r, bgColor.g, bgColor.b);
+
+        // Calculate contrast ratio
+        const ratio = getContrastRatio(textLuminance, bgLuminance);
+
+        // Update preview
+        previewText.style.color = textColorInput.value;
+        previewText.style.backgroundColor = bgColorInput.value;
+        previewText.style.fontSize = `${fontSize}px`;
+        previewText.style.fontWeight = fontWeightInput.value;
+
+        // Format ratio for display
+        const ratioDisplay = Math.round(ratio * 100) / 100;
+        contrastRatioSpan.textContent = `${ratioDisplay}:1`;
+
+        // Check if text is "large" according to WCAG
+        const isLargeText = fontSize >= 18 || (fontSize >= 14 && isBold);
+
+        // Update compliance indicators
+        normalAA.textContent = ratio >= 4.5 ? "✅ Pass" : "❌ Fail";
+        largeAA.textContent = ratio >= 3 ? "✅ Pass" : "❌ Fail";
+        normalAAA.textContent = ratio >= 7 ? "✅ Pass" : "❌ Fail";
+        largeAAA.textContent = ratio >= 4.5 ? "✅ Pass" : "❌ Fail";
+      }
+
+      // Get DOM elements
+      const textColorInput = document.getElementById("textColor");
+      const bgColorInput = document.getElementById("backgroundColor");
+      const fontSizeInput = document.getElementById("fontSize");
+      const fontWeightInput = document.getElementById("fontWeight");
+      const previewText = document.getElementById("previewText");
+      const contrastRatioSpan = document.getElementById("contrastRatio");
+      const normalAA = document.getElementById("normalAA");
+      const largeAA = document.getElementById("largeAA");
+      const normalAAA = document.getElementById("normalAAA");
+      const largeAAA = document.getElementById("largeAAA");
+
+      // Add event listeners
+      textColorInput.addEventListener("input", updateContrast);
+      bgColorInput.addEventListener("input", updateContrast);
+      fontSizeInput.addEventListener("change", updateContrast);
+      fontWeightInput.addEventListener("change", updateContrast);
+
+      // Initial update
+      updateContrast();
+    </script>
   </body>
 </html>
