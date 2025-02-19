@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Accessibility Workshop</title>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, sans-serif;
+        line-height: 1.6;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+      h1 {
+        color: #2c3e50;
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 0.5rem;
+      }
+      .exercise-list {
+        list-style: none;
+        padding: 0;
+      }
+      .exercise-list li {
+        margin: 1rem 0;
+      }
+      .exercise-list a {
+        display: block;
+        padding: 1rem;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        text-decoration: none;
+        color: #2c3e50;
+        border: 1px solid #dee2e6;
+        transition: all 0.3s ease;
+      }
+      .exercise-list a:hover,
+      .exercise-list a:focus {
+        background-color: #e9ecef;
+        transform: translateY(-2px);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Web Accessibility Workshop</h1>
+      <p>
+        Welcome to the Web Accessibility Workshop! This course will help you
+        understand and implement web accessibility best practices through
+        hands-on exercises.
+      </p>
+
+      <nav>
+        <h2>Exercises</h2>
+        <ul class="exercise-list">
+          <li>
+            <a href="screen-reader.html"
+              >Exercise 1: Screen Reader Accessibility</a
+            >
+          </li>
+          <li><a href="color-contrast.html">Exercise 2: Color Contrast</a></li>
+          <li>
+            <a href="tab-trapping.html"
+              >Exercise 3: Tab Trapping and Keyboard Navigation</a
+            >
+          </li>
+          <li><a href="aria.html">Exercise 4: ARIA Labels and Roles</a></li>
+          <li>
+            <a href="accessibility-audit.html"
+              >Exercise 5: Accessibility Audits</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </main>
+  </body>
+</html>
