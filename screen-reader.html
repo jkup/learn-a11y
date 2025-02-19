@@ -132,52 +132,58 @@
 
         <section class="practice">
           <h2>Practice Exercise</h2>
-          <p>Once you have a screen reader set up, try the following:</p>
-          <ol>
-            <li>
-              Navigate back to the workshop homepage using your screen reader
-            </li>
-            <li>Listen to how the exercise list is read</li>
-            <li>Try to understand the page structure through headings</li>
-          </ol>
-          <p>
-            Notice how semantic HTML elements and proper heading structure make
-            navigation easier for screen reader users.
-          </p>
+          <span
+            >Navigate this page using only the keyboard and a screen reader.
+            When you are finished, update it to use semantic HTML and navigate
+            it again.</span
+          >
+          <div class="header">
+            <span class="title">My Website</span>
+          </div>
+
+          <div class="nav">
+            <div>Home</div>
+            <div>About</div>
+            <div>Contact</div>
+          </div>
+
+          <div class="main-content">
+            <div class="section">
+              <span class="big-text">Welcome to our page</span>
+              <div class="text">Here is some important information.</div>
+            </div>
+
+            <div class="section">
+              <span class="big-text">Subheading</span>
+              <div class="text">More content here.</div>
+            </div>
+
+            <div class="form-container">
+              <div class="form-title">Sign Up</div>
+              <div>
+                <span>Name:</span>
+                <input type="text" />
+              </div>
+              <div>
+                <span>Email:</span>
+                <input type="text" />
+              </div>
+              <div>
+                <span>Password:</span>
+                <input type="password" />
+              </div>
+              <div>
+                <span>Subscribe to Newsletter</span>
+                <input type="checkbox" />
+              </div>
+              <div>
+                <span>Submit</span>
+                <div onclick="alert('submitted')">Click Here</div>
+              </div>
+            </div>
+          </div>
         </section>
       </section>
     </main>
-
-    <style>
-      kbd {
-        background-color: #f8f9fa;
-        border: 1px solid #dee2e6;
-        border-radius: 3px;
-        padding: 2px 4px;
-        font-family: monospace;
-      }
-
-      code {
-        background-color: #f8f9fa;
-        padding: 2px 4px;
-        border-radius: 3px;
-        font-family: monospace;
-      }
-
-      article {
-        margin: 2rem 0;
-        padding: 1.5rem;
-        background-color: #fff;
-        border-radius: 8px;
-        border: 1px solid #dee2e6;
-      }
-
-      .practice {
-        margin-top: 3rem;
-        padding: 1.5rem;
-        background-color: #e8f4f8;
-        border-radius: 8px;
-      }
-    </style>
   </body>
 </html>

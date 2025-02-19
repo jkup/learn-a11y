@@ -85,3 +85,104 @@ article {
   background-color: #e8f4f8;
   border-radius: 8px;
 }
+
+.practice .header {
+  background: #0073e6;
+  color: white;
+  padding: 15px;
+  font-size: 24px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.practice .nav {
+  display: flex;
+  justify-content: space-around;
+  background: #ddd;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.practice .nav div {
+  padding: 10px 15px;
+  background: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0practice 0.3s;
+}
+
+.practice .nav div:hover {
+  background: #bbb;
+}
+
+.practice .main-content {
+  margin-top: 20px;
+}
+
+.practice .section {
+  background: white;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.practice .big-text {
+  display: block;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.practice .text {
+  font-size: 16px;
+  color: #333;
+}
+
+.practice .form-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.practice .form-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.practice .form-container div {
+  margin-bottom: 10px;
+}
+
+.practice .form-container span {
+  display: inline-block;
+  width: 120px;
+  font-weight: bold;
+}
+
+.practice .form-container input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.practice .form-container input[type="checkbox"] {
+  width: auto;
+}
+
+.practice .form-container div[onclick] {
+  background: #0073e6;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.practice .form-container div[onclick]:hover {
+  background: #005bb5;
+}
