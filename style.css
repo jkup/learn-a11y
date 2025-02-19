@@ -183,7 +183,7 @@ article {
   display: inline-block;
   margin: 1rem 0;
   padding: 0.75rem 1.5rem;
-  background: #3498db;
+  background: #2563eb;
   color: white;
   text-decoration: none;
   border-radius: 6px;
@@ -192,7 +192,7 @@ article {
 
 .setup-link:hover,
 .setup-link:focus {
-  background: #2980b9;
+  background: #1d4ed8;
   transform: translateY(-2px);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
