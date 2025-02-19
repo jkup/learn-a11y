@@ -11,179 +11,100 @@
     <main>
       <h1>Exercise 1: Screen Reader Accessibility</h1>
       <p>
-        In this exercise, you'll learn how to make your web content accessible
-        to screen readers. First, let's get you set up with a screen reader
-        based on your operating system.
+        In this exercise, you'll learn how to make web content accessible to
+        screen readers by fixing non-semantic HTML.
       </p>
 
-      <section class="exercise-content">
-        <h2>Choosing a Screen Reader</h2>
-
-        <article id="macos">
-          <h3>macOS: VoiceOver</h3>
-          <p>VoiceOver comes pre-installed on all Mac computers.</p>
-          <ol>
-            <li>
-              Press <kbd>Command</kbd> + <kbd>F5</kbd> to turn VoiceOver on/off,
-              or
-            </li>
-            <li>Go to System Settings > Accessibility > VoiceOver</li>
-            <li>
-              Basic commands:
-              <ul>
-                <li>
-                  Navigate: <kbd>Control</kbd> + <kbd>Option</kbd> + arrow keys
-                </li>
-                <li>
-                  Read page: <kbd>Control</kbd> + <kbd>Option</kbd> +
-                  <kbd>A</kbd>
-                </li>
-                <li>Stop reading: <kbd>Control</kbd></li>
-              </ul>
-            </li>
-          </ol>
-        </article>
-
-        <article id="windows">
-          <h3>Windows: NVDA</h3>
-          <p>NVDA is a free, open-source screen reader for Windows.</p>
-          <ol>
-            <li>
-              Download NVDA from
-              <a href="https://www.nvaccess.org/download/" target="_blank"
-                >nvaccess.org</a
-              >
-            </li>
-            <li>Run the installer and follow the setup wizard</li>
-            <li>
-              Basic commands:
-              <ul>
-                <li>
-                  Start/Stop reading: <kbd>Insert</kbd> + <kbd>Down Arrow</kbd>
-                </li>
-                <li>Navigate by headings: <kbd>H</kbd></li>
-                <li>Navigate by links: <kbd>Tab</kbd></li>
-                <li>Stop speaking: <kbd>Control</kbd></li>
-              </ul>
-            </li>
-          </ol>
-        </article>
-
-        <article id="linux">
-          <h3>Linux: Orca</h3>
+      <div class="exercise-content">
+        <section class="instructions">
+          <h2>Instructions</h2>
           <p>
-            Orca is the default screen reader for GNOME-based Linux
-            distributions.
+            Below is a website built without semantic HTML. Try navigating it
+            with a screen reader, then update it to use proper semantic
+            elements.
           </p>
           <ol>
+            <li>Use your screen reader to navigate the example below</li>
+            <li>Notice how difficult it is to understand the structure</li>
             <li>
-              Open Terminal and type:
-              <code>sudo apt-get install orca</code> (Ubuntu/Debian)
+              Update the HTML to use semantic elements like
+              <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>,
+              <code>&lt;main&gt;</code>, etc.
             </li>
+            <li>Add appropriate ARIA labels where needed</li>
             <li>
-              Launch Orca: <kbd>Super</kbd> + <kbd>Alt</kbd> + <kbd>O</kbd>
-            </li>
-            <li>
-              Basic commands:
-              <ul>
-                <li>
-                  Start/Stop reading: <kbd>Orca Modifier</kbd> + <kbd>H</kbd>
-                </li>
-                <li>Navigate: <kbd>Arrow keys</kbd></li>
-                <li>
-                  Read current line: <kbd>Orca Modifier</kbd> + <kbd>L</kbd>
-                </li>
-              </ul>
+              Test again with your screen reader to verify the improvements
             </li>
           </ol>
-        </article>
+        </section>
 
-        <article id="browser">
-          <h3>Browser Extension: ChromeVox</h3>
-          <p>
-            If you prefer not to install a system-wide screen reader, ChromeVox
-            is a good alternative that works directly in Chrome.
-          </p>
-          <ol>
-            <li>
-              Install
-              <a
-                href="https://chrome.google.com/webstore/detail/chromevox-classic-extensi/kgejglhpjiefppelpmljglcjbhoiplfn"
-                target="_blank"
-                >ChromeVox from the Chrome Web Store</a
-              >
-            </li>
-            <li>
-              After installation, click the ChromeVox icon in your extensions
-              bar to enable it
-            </li>
-            <li>
-              Basic commands:
-              <ul>
-                <li>Navigate: <kbd>Search</kbd> + arrow keys</li>
-                <li>Click: <kbd>Search</kbd> + <kbd>Space</kbd></li>
-                <li>
-                  Read from current position: <kbd>Search</kbd> + <kbd>R</kbd>
-                </li>
-              </ul>
-            </li>
-          </ol>
-        </article>
-
-        <section class="practice">
-          <h2>Practice Exercise</h2>
-          <span
-            >Navigate this page using only the keyboard and a screen reader.
-            When you are finished, update it to use semantic HTML and navigate
-            it again.</span
-          >
-          <div class="header">
-            <span class="title">My Website</span>
-          </div>
-
-          <div class="nav">
-            <div>Home</div>
-            <div>About</div>
-            <div>Contact</div>
-          </div>
-
-          <div class="main-content">
-            <div class="section">
-              <span class="big-text">Welcome to our page</span>
-              <div class="text">Here is some important information.</div>
+        <section class="example">
+          <h2>Example to Fix</h2>
+          <!-- Non-semantic website example -->
+          <div class="practice-area">
+            <div class="header">
+              <span class="title">My Website</span>
             </div>
 
-            <div class="section">
-              <span class="big-text">Subheading</span>
-              <div class="text">More content here.</div>
+            <div class="nav">
+              <div>Home</div>
+              <div>About</div>
+              <div>Contact</div>
             </div>
 
-            <div class="form-container">
-              <div class="form-title">Sign Up</div>
-              <div>
-                <span>Name:</span>
-                <input type="text" />
+            <div class="main-content">
+              <div class="section">
+                <span class="big-text">Welcome to our page</span>
+                <div class="text">Here is some important information.</div>
               </div>
-              <div>
-                <span>Email:</span>
-                <input type="text" />
+
+              <div class="section">
+                <span class="big-text">Latest Updates</span>
+                <div class="text">Check out our new features!</div>
               </div>
-              <div>
-                <span>Password:</span>
-                <input type="password" />
-              </div>
-              <div>
-                <span>Subscribe to Newsletter</span>
-                <input type="checkbox" />
-              </div>
-              <div>
-                <span>Submit</span>
-                <div onclick="alert('submitted')">Click Here</div>
+
+              <div class="form-container">
+                <div class="form-title">Contact Us</div>
+                <div>
+                  <span>Name:</span>
+                  <input type="text" />
+                </div>
+                <div>
+                  <span>Email:</span>
+                  <input type="text" />
+                </div>
+                <div>
+                  <span>Message:</span>
+                  <input type="text" />
+                </div>
+                <div>
+                  <span>Subscribe to Newsletter</span>
+                  <input type="checkbox" />
+                </div>
+                <div>
+                  <div onclick="alert('Form submitted!')" class="submit-button">
+                    Submit Form
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
-      </section>
+
+        <section class="hints">
+          <h2>Hints</h2>
+          <ul>
+            <li>
+              Replace <code>div</code> elements with appropriate semantic
+              elements
+            </li>
+            <li>Use proper heading hierarchy (h1, h2, etc.)</li>
+            <li>Add proper form labels and structure</li>
+            <li>Make navigation links actually clickable</li>
+            <li>Add appropriate ARIA labels for interactive elements</li>
+          </ul>
+        </section>
+      </div>
     </main>
   </body>
 </html>

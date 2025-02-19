@@ -79,112 +79,122 @@ article {
   border: 1px solid #dee2e6;
 }
 
-.practice {
-  margin-top: 3rem;
-  padding: 1.5rem;
-  background-color: #e8f4f8;
+/* Remove old .practice styles and keep the new .practice-area styles */
+.practice-area {
+  border: 2px solid #dee2e6;
   border-radius: 8px;
+  padding: 2rem;
+  margin: 2rem 0;
+  background: white;
 }
 
-.practice .header {
-  background: #0073e6;
+.practice-area .header {
+  background: #3498db;
   color: white;
-  padding: 15px;
-  font-size: 24px;
+  padding: 1rem;
   text-align: center;
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
-.practice .nav {
-  display: flex;
-  justify-content: space-around;
-  background: #ddd;
-  padding: 10px;
-  margin-top: 10px;
-  border-radius: 5px;
-}
-
-.practice .nav div {
-  padding: 10px 15px;
-  background: white;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0practice 0.3s;
-}
-
-.practice .nav div:hover {
-  background: #bbb;
-}
-
-.practice .main-content {
-  margin-top: 20px;
-}
-
-.practice .section {
-  background: white;
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.practice .big-text {
-  display: block;
-  font-size: 22px;
+.practice-area .title {
+  font-size: 24px;
   font-weight: bold;
-  margin-bottom: 10px;
 }
 
-.practice .text {
-  font-size: 16px;
-  color: #333;
+.practice-area .nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 1rem 0;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 4px;
 }
 
-.practice .form-container {
-  background: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.practice-area .nav div {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  background: white;
+  border-radius: 4px;
+  border: 1px solid #dee2e6;
 }
 
-.practice .form-title {
+.practice-area .section {
+  margin: 2rem 0;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 4px;
+}
+
+.practice-area .big-text {
+  display: block;
   font-size: 20px;
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 0.5rem;
 }
 
-.practice .form-container div {
-  margin-bottom: 10px;
+.practice-area .form-container {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 4px;
 }
 
-.practice .form-container span {
-  display: inline-block;
-  width: 120px;
+.practice-area .form-title {
+  font-size: 20px;
   font-weight: bold;
+  margin-bottom: 1rem;
 }
 
-.practice .form-container input {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+.practice-area .form-container > div {
+  margin: 1rem 0;
 }
 
-.practice .form-container input[type="checkbox"] {
-  width: auto;
+.practice-area .form-container span {
+  display: inline-block;
+  width: 150px;
 }
 
-.practice .form-container div[onclick] {
-  background: #0073e6;
+.practice-area .form-container input[type="text"] {
+  padding: 0.5rem;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  width: 200px;
+}
+
+.practice-area .submit-button {
+  display: inline-block;
+  background: #3498db;
   color: white;
-  padding: 10px;
-  text-align: center;
-  border-radius: 5px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background 0.3s;
 }
 
-.practice .form-container div[onclick]:hover {
-  background: #005bb5;
+.hints {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #e8f4f8;
+  border-radius: 8px;
+  border-left: 4px solid #3498db;
+}
+
+.setup-link {
+  display: inline-block;
+  margin: 1rem 0;
+  padding: 0.75rem 1.5rem;
+  background: #3498db;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.setup-link:hover,
+.setup-link:focus {
+  background: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Modal styles */
