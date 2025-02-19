@@ -2,23 +2,210 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <title>Accessibility Audits - Web Accessibility Workshop</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Intentionally poor color contrast */
+      .hero {
+        background: #e2e2e2;
+        color: #939393;
+        text-align: center;
+        padding: 3rem;
+        margin: -2rem -2rem 2rem -2rem;
+      }
+
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+      }
+
+      .card {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      /* No focus styles */
+      .card a:focus {
+        outline: none;
+      }
+
+      .feature-image {
+        width: 100%;
+        height: 150px;
+        background: #f0f0f0;
+        margin-bottom: 1rem;
+      }
+
+      .newsletter {
+        background: #f8f9fa;
+        padding: 2rem;
+        border-radius: 8px;
+        margin-top: 2rem;
+      }
+
+      .social-links img {
+        width: 32px;
+        height: 32px;
+        margin: 0 0.5rem;
+      }
+
+      /* Small text that's hard to read */
+      .footer {
+        font-size: 11px;
+        color: #999;
+        text-align: center;
+        margin-top: 3rem;
+      }
+
+      .menu-button {
+        background: #3498db;
+        color: white;
+        border: none;
+        padding: 0.5rem;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 1rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .mobile-menu.active {
+        display: block;
+      }
+    </style>
   </head>
-  <body>
+  <body aria-hidden="true">
     <a href="index.html" class="back-link">← Back to Workshop Index</a>
     <main>
       <h1>Exercise 5: Accessibility Audits</h1>
       <p>
-        In this exercise, you'll learn how to conduct accessibility audits using
-        various tools and techniques to ensure your websites meet accessibility
-        standards.
+        This page contains many accessibility violations. Use Lighthouse or
+        other audit tools to find and fix them!
       </p>
 
-      <section class="exercise-content">
-        <!-- Exercise content will go here -->
-      </section>
+      <!-- Missing alt text -->
+      <div class="hero">
+        <img src="https://picsum.photos/800/400" width="800" height="400" />
+        <div onclick="alert('clicked!')" style="cursor: pointer">
+          Click here to learn more
+        </div>
+      </div>
+
+      <!-- Navigation with no semantic structure -->
+      <div style="margin: 1rem 0">
+        <div onclick="toggleMenu()" class="menu-button">☰ Menu</div>
+        <div class="mobile-menu">
+          <div>Home</div>
+          <div>About</div>
+          <div>Services</div>
+          <div>Contact</div>
+        </div>
+      </div>
+
+      <!-- Cards with poor accessibility -->
+      <div class="card-grid">
+        <div class="card">
+          <div class="feature-image"></div>
+          <div style="font-size: 20px; font-weight: bold">Feature 1</div>
+          <div style="color: #888">Description of feature 1 goes here</div>
+          <div
+            onclick="location.href='#'"
+            style="color: blue; text-decoration: underline; cursor: pointer"
+          >
+            Learn more
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="feature-image"></div>
+          <div style="font-size: 20px; font-weight: bold">Feature 2</div>
+          <div style="color: #888">Description of feature 2 goes here</div>
+          <div
+            onclick="location.href='#'"
+            style="color: blue; text-decoration: underline; cursor: pointer"
+          >
+            Learn more
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="feature-image"></div>
+          <div style="font-size: 20px; font-weight: bold">Feature 3</div>
+          <div style="color: #888">Description of feature 3 goes here</div>
+          <div
+            onclick="location.href='#'"
+            style="color: blue; text-decoration: underline; cursor: pointer"
+          >
+            Learn more
+          </div>
+        </div>
+      </div>
+
+      <!-- Form with accessibility issues -->
+      <div class="newsletter">
+        <div style="font-size: 24px">Subscribe to Newsletter</div>
+        <div style="margin: 1rem 0">
+          <input type="text" placeholder="Enter your name" />
+        </div>
+        <div style="margin: 1rem 0">
+          <input type="text" placeholder="Enter your email" />
+        </div>
+        <div>
+          <input type="checkbox" />
+          <span style="color: #666">I agree to receive emails</span>
+        </div>
+        <div style="margin-top: 1rem">
+          <div
+            onclick="alert('Subscribed!')"
+            style="
+              background: #3498db;
+              color: white;
+              padding: 0.5rem 1rem;
+              display: inline-block;
+              cursor: pointer;
+            "
+          >
+            SUBSCRIBE NOW
+          </div>
+        </div>
+      </div>
+
+      <!-- Social media links without proper labels -->
+      <div class="social-links" style="text-align: center; margin-top: 2rem">
+        <img src="https://picsum.photos/32/32" />
+        <img src="https://picsum.photos/32/32" />
+        <img src="https://picsum.photos/32/32" />
+      </div>
+
+      <div class="footer">
+        Copyright © 2024. All text on this page is hard to read due to small
+        size and poor contrast.
+        <div style="color: #ccc">
+          Privacy Policy | Terms of Service | Contact Us
+        </div>
+      </div>
     </main>
+
+    <script>
+      function toggleMenu() {
+        document.querySelector(".mobile-menu").classList.toggle("active");
+      }
+    </script>
   </body>
 </html>
