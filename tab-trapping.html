@@ -78,7 +78,7 @@
       const modal = document.getElementById("modal");
       const modalOverlay = document.getElementById("modalOverlay");
       const openButton = document.getElementById("openModal");
-      const closeButton = document.getElementById("closeButton");
+      const closeButton = document.getElementById("closeModal");
       const form = document.getElementById("contactForm");
 
       // Get all focusable elements in the modal
@@ -99,13 +99,11 @@
 
       const openModal = () => {
         modalOverlay.hidden = false;
-        // Store the element that had focus before opening modal
-        openButton.blur();
 
         // Focus the first input in the modal
-        const firstInput = modal.querySelector("input");
-        if (firstInput) {
-          firstInput.focus();
+        const focusableElements = getFocusableElements();
+        if (focusableElements.length > 0) {
+          focusableElements[0].focus();
         }
 
         // Add event listeners
@@ -126,9 +124,7 @@
 
       // Event listeners
       openButton.addEventListener("click", openModal);
-      document
-        .getElementById("closeModal")
-        .addEventListener("click", closeModal);
+      closeButton.addEventListener("click", closeModal);
 
       // Close modal if clicking outside
       modalOverlay.addEventListener("click", (e) => {
