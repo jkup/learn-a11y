@@ -126,13 +126,11 @@
 
       const openModal = () => {
         modalOverlay.hidden = false;
-        // Store the element that had focus before opening modal
-        openButton.blur();
 
         // Focus the first input in the modal
-        const firstInput = modal.querySelector("input");
-        if (firstInput) {
-          firstInput.focus();
+        const focusableElements = getFocusableElements();
+        if (focusableElements.length > 0) {
+          focusableElements[0].focus();
         }
 
         // Add event listeners
