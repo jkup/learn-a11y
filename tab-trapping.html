@@ -78,7 +78,7 @@
       const modal = document.getElementById("modal");
       const modalOverlay = document.getElementById("modalOverlay");
       const openButton = document.getElementById("openModal");
-      const closeButton = document.getElementById("closeButton");
+      const closeButton = document.getElementById("closeModal");
       const form = document.getElementById("contactForm");
 
       // Get all focusable elements in the modal
@@ -88,6 +88,33 @@
             'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
           )
         );
+      };
+
+      // Handle tab key press
+      const handleTabKey = (e) => {
+        if (e.key !== "Tab") return;
+
+        const focusableElements = getFocusableElements();
+        const firstFocusableElement = focusableElements[0];
+        const lastFocusableElement =
+          focusableElements[focusableElements.length - 1];
+
+        // If shift + tab
+        if (e.shiftKey) {
+          // If focus is on first element, move to last
+          if (document.activeElement === firstFocusableElement) {
+            e.preventDefault();
+            lastFocusableElement.focus();
+          }
+        }
+        // If just tab
+        else {
+          // If focus is on last element, move to first
+          if (document.activeElement === lastFocusableElement) {
+            e.preventDefault();
+            firstFocusableElement.focus();
+          }
+        }
       };
 
       // Handle escape key press
@@ -126,9 +153,7 @@
 
       // Event listeners
       openButton.addEventListener("click", openModal);
-      document
-        .getElementById("closeModal")
-        .addEventListener("click", closeModal);
+      closeButton.addEventListener("click", closeModal);
 
       // Close modal if clicking outside
       modalOverlay.addEventListener("click", (e) => {

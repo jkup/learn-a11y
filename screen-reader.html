@@ -42,52 +42,69 @@
           <h2>Example to Fix</h2>
           <!-- Non-semantic website example -->
           <div class="practice-area">
-            <div class="header">
-              <span class="title">My Website</span>
-            </div>
+            <header class="header">
+              <h1 class="title">My Website</h1>
+            </header>
 
-            <div class="nav">
-              <div>Home</div>
-              <div>About</div>
-              <div>Contact</div>
-            </div>
+            <nav class="nav" aria-label="Main navigation">
+              <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </nav>
 
-            <div class="main-content">
-              <div class="section">
-                <span class="big-text">Welcome to our page</span>
-                <div class="text">Here is some important information.</div>
-              </div>
+            <main class="main-content">
+              <section class="section" aria-labelledby="welcome-heading">
+                <h2 id="welcome-heading" class="big-text">
+                  Welcome to our page
+                </h2>
+                <p class="text">Here is some important information.</p>
+              </section>
 
-              <div class="section">
-                <span class="big-text">Latest Updates</span>
-                <div class="text">Check out our new features!</div>
-              </div>
+              <section class="section" aria-labelledby="updates-heading">
+                <h2 id="updates-heading" class="big-text">Latest Updates</h2>
+                <p class="text">Check out our new features!</p>
+              </section>
 
-              <div class="form-container">
-                <div class="form-title">Contact Us</div>
-                <div>
-                  <span>Name:</span>
-                  <input type="text" />
-                </div>
-                <div>
-                  <span>Email:</span>
-                  <input type="text" />
-                </div>
-                <div>
-                  <span>Message:</span>
-                  <input type="text" />
-                </div>
-                <div>
-                  <span>Subscribe to Newsletter</span>
-                  <input type="checkbox" />
-                </div>
-                <div>
-                  <div onclick="alert('Form submitted!')" class="submit-button">
-                    Submit Form
+              <section class="form-container" aria-labelledby="contact-heading">
+                <h2 id="contact-heading" class="form-title">Contact Us</h2>
+                <form id="contact-form">
+                  <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required />
                   </div>
-                </div>
-              </div>
-            </div>
+                  <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows="4"
+                      required
+                    ></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label>
+                      <input
+                        type="checkbox"
+                        name="newsletter"
+                        id="newsletter"
+                      />
+                      Subscribe to Newsletter
+                    </label>
+                  </div>
+                  <div>
+                    <button type="submit" class="submit-button">
+                      Submit Form
+                    </button>
+                  </div>
+                </form>
+              </section>
+            </main>
           </div>
         </section>
 
