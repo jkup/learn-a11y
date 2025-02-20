@@ -448,3 +448,46 @@ article {
   border-color: #7dd3fc;
   text-decoration: underline;
 }
+
+.shortcut-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.shortcut-list li {
+  margin: 0.75rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.shortcut-list kbd {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.tips-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.tips-list li {
+  margin: 0.75rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.tips-list li::before {
+  content: "💡";
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+}
