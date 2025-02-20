@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 3: Focus Styles - Web Accessibility Workshop</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a href="index.html" class="back-link">← Back to Workshop Index</a>
+    <main>
+      <h1>Exercise 3: Focus Styles</h1>
+      <p>
+        Visible focus indicators are crucial for keyboard users. In this
+        exercise, you'll learn how to create clear, beautiful focus styles that
+        meet WCAG requirements.
+      </p>
+
+      <section class="exercise-content">
+        <h2>Common Focus Style Issues</h2>
+        <div class="example-section">
+          <h3>Bad Examples</h3>
+          <div class="bad-examples">
+            <button class="no-focus">No Focus Outline</button>
+            <button class="thin-focus">Thin Outline</button>
+            <button class="low-contrast-focus">Low Contrast</button>
+          </div>
+
+          <h3>Good Examples</h3>
+          <div class="good-examples">
+            <button class="outline-focus">Outline Focus</button>
+            <button class="multiple-indicators">Multiple Indicators</button>
+            <button class="animated-focus">Animated Focus</button>
+          </div>
+        </div>
+
+        <div class="practice-section">
+          <h2>Practice Area</h2>
+          <p>
+            Try tabbing through these elements and notice their focus styles:
+          </p>
+
+          <nav class="demo-nav">
+            <a href="#" class="demo-link">Home</a>
+            <a href="#" class="demo-link">About</a>
+            <a href="#" class="demo-link">Contact</a>
+          </nav>
+
+          <div class="demo-cards">
+            <div class="demo-card" tabindex="0">
+              <h3>Card 1</h3>
+              <p>This card is focusable with a custom focus style.</p>
+            </div>
+            <div class="demo-card" tabindex="0">
+              <h3>Card 2</h3>
+              <p>
+                Notice how the focus style makes it clear which card is
+                selected.
+              </p>
+            </div>
+          </div>
+
+          <form class="demo-form">
+            <div class="form-group">
+              <label for="demo-input">Text Input:</label>
+              <input
+                type="text"
+                id="demo-input"
+                placeholder="Type something..."
+              />
+            </div>
+            <div class="form-group">
+              <label for="demo-select">Select Menu:</label>
+              <select id="demo-select">
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+              </select>
+            </div>
+          </form>
+        </div>
+
+        <section class="hints">
+          <h2>Focus Style Requirements</h2>
+          <ul>
+            <li>
+              Focus indicators must have a minimum contrast ratio of 3:1 against
+              adjacent colors
+            </li>
+            <li>Focus areas should be at least 2px thick</li>
+            <li>Focus styles should be visible in both light and dark modes</li>
+            <li>
+              Consider using multiple indicators (outline + background change)
+            </li>
+            <li>
+              Animations can enhance focus visibility but shouldn't be
+              distracting
+            </li>
+          </ul>
+        </section>
+      </section>
+    </main>
+
+    <style>
+      /* Bad Examples */
+      .no-focus:focus {
+        outline: none;
+      }
+
+      .thin-focus:focus {
+        outline: 1px dotted #000;
+      }
+
+      .low-contrast-focus:focus {
+        outline: 2px solid #ddd;
+      }
+
+      /* Good Examples */
+      .outline-focus:focus {
+        outline: 3px solid #2563eb;
+        outline-offset: 2px;
+      }
+
+      .multiple-indicators:focus {
+        outline: 2px solid #2563eb;
+        outline-offset: 2px;
+        box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2);
+        background-color: #eff6ff;
+      }
+
+      .animated-focus:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px #fff, 0 0 0 4px #2563eb;
+        animation: focusPulse 1.5s infinite;
+      }
+
+      @keyframes focusPulse {
+        0% {
+          box-shadow: 0 0 0 2px #fff, 0 0 0 4px #2563eb;
+        }
+        50% {
+          box-shadow: 0 0 0 2px #fff, 0 0 0 6px rgba(37, 99, 235, 0.6);
+        }
+        100% {
+          box-shadow: 0 0 0 2px #fff, 0 0 0 4px #2563eb;
+        }
+      }
+
+      /* Demo Elements */
+      .demo-nav {
+        display: flex;
+        gap: 1rem;
+        margin: 2rem 0;
+      }
+
+      .demo-link {
+        padding: 0.5rem 1rem;
+        background: #f8f9fa;
+        border-radius: 4px;
+        text-decoration: none;
+        color: #2c3e50;
+        transition: all 0.2s ease;
+      }
+
+      .demo-link:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px #fff, 0 0 0 4px #2563eb;
+        background: #eff6ff;
+      }
+
+      .demo-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin: 2rem 0;
+      }
+
+      .demo-card {
+        padding: 1rem;
+        background: #fff;
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      .demo-card:focus {
+        outline: none;
+        border-color: #2563eb;
+        box-shadow: 0 0 0 2px #fff, 0 0 0 4px #2563eb;
+        background: #eff6ff;
+      }
+
+      .example-section {
+        margin: 2rem 0;
+      }
+
+      .bad-examples,
+      .good-examples {
+        display: flex;
+        gap: 1rem;
+        margin: 1rem 0;
+      }
+
+      button {
+        padding: 0.5rem 1rem;
+        border: 1px solid #dee2e6;
+        border-radius: 4px;
+        background: #fff;
+        cursor: pointer;
+      }
+    </style>
+  </body>
+</html>
