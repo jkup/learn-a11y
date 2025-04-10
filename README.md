@@ -1,6 +1,8 @@
-# Web Accessibility Workshop
+# Website Accessibility, v3
+This is a companion repository for the [Website Accessibility, v3](https://frontendmasters.com/courses/accessibility-v3/) course on Frontend Masters.
+[![Frontend Masters](https://static.frontendmasters.com/assets/brand/logos/full.png)](https://frontendmasters.com/courses/accessibility-v3/)
 
-This project accompanies the Frontend Masters course on Web Accessibility. It's a simple HTML and CSS project designed to teach accessibility concepts through hands-on exercises.
+It's a simple HTML and CSS project designed to teach accessibility concepts through hands-on exercises.
 
 ## Getting Started
 
